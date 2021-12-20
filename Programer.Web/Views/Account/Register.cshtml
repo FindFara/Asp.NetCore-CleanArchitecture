@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+@model Programer.Core.ViewModels.Users.AccountRegisterVm
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+}
+<html lang="en">
+<head>
+    <link href="~/css/AccountPage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-page ">
+        <div class="form">
+            <form class="login-form" asp-action="Register" asp-controller="Account" asp-area="" asp-antiforgery="true" method="post">
+                <h1 class="h2 text-center">Sign Up</h1>
+
+                @*<input asp-for="Name" class="form-control" placeholder="Name">
+                     <label for="floatingInput">Name</label>
+                     <span asp-validation-for="Name" class="text-danger"></span>
+                     </div>
+
+                    <div class="form-floating  col-md-2 mb-2 ">
+                    <input asp-for="Family" class="form-control" placeholder="Family">
+                    <label for="floatingInput">Family</label>
+                    <span asp-validation-for="Family" class="text-danger"></span>
+                     </div>*@
+
+                <div>
+                    <input asp-for="Email" placeholder="Email">
+                    @*<label for="floatingInput">Email</label>*@
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+
+                <div>
+                    <input asp-for="Password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <input asp-for="RePassword" class="form-control" placeholder="Confirm Password">
+                    <span asp-validation-for="RePassword" class="text-danger"></span>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up </button>
+                <p class="mt-5 mb-5 text-muted text-center">&copy; Experience the Developer</p>
+
+            </form>
+        </div>
+    </div>
+    @section Scripts{
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

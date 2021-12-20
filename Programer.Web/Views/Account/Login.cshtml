@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+@model Programer.Core.ViewModels.Users.AccountLoginVm
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+}
+<html lang="en">
+<head>
+    <link href="~/css/AccountPage.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="login-page ">
+            <div class="form">
+
+                <form class="login-form" asp-action="Login" asp-controller="Account" asp-area="" asp-antiforgery="true" method="post">
+                    <h1 class="h2 text-center">Login</h1>
+
+                    <div>
+                        <input asp-for="Email" class="form-control" placeholder="Email">
+                        @*<label for="floatingInput">Email</label>*@
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+
+                    <div>
+                        <input asp-for="Password" class="form-control" placeholder="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div>
+
+                        <div>
+                            <label asp-for="IsRemember">
+                                <input asp-for="IsRemember">remember
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Login </button>
+                        <p class="mt-5 mb-5 text-muted text-center">&copy; Experience the Developer</p>
+                        <p class="message">Not registered? <a href="/auth/register">Create an account</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
