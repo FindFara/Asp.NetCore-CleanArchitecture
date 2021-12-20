@@ -17,7 +17,7 @@ namespace Programer.Core.Services
 
     }
 
-    public class ProductService 
+    public class ProductService: IProductService
     {
         private readonly ProgramerContext _context;
 

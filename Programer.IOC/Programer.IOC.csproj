@@ -7,8 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Programer.Core\Programer.Core.csproj" />
     <ProjectReference Include="..\Programer.DataEF\Programer.DataEF.csproj" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
-	  </PackageReference>
   </ItemGroup>
 
 </Project>
