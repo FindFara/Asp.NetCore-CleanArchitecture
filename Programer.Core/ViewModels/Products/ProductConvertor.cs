@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programer.Core.ViewModels.Prouducts
+namespace Programer.Core.ViewModels.Products
 {
     public static class ProductConvertor
     {
@@ -23,7 +23,7 @@ namespace Programer.Core.ViewModels.Prouducts
                 Description = product.Description,
                 Price = product.Price,
                 Discount = product.Discount,
-               
+                CreateDate = product.CreateDate
             };
         }
 

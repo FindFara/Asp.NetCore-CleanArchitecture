@@ -1,0 +1,66 @@
+﻿@model Programer.Core.ViewModels.Products.ProductCreateOrEditVm
+@{
+
+    ViewData["Title"] = (Model.Id == 0 ? "Create" : $"Edit {Model.Name}");
+}
+
+<meta name="viewport" content="width=device-width" />
+<title>@ViewData["Title"]</title>
+
+<div class="row">
+    <div class="offset-md-1 col-md-4">
+        <form asp-action="@(Model.Id == 0 ? "Create" : "Edit")">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount" class="control-label"></label>
+                <input asp-for="Discount" class="form-control" />
+                <span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortDescription" class="control-label"></label>
+                <input asp-for="ShortDescription" class="form-control" />
+                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductGroupId" class="control-label"></label>
+                <input asp-for="ProductGroupId" class="form-control" />
+                <span asp-validation-for="ProductGroupId" class="text-danger"></span>
+            </div>
+            @if (Model.Id != 0)
+            {
+                <input asp-for="CreateDate" type="hidden" />
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <input type="submit" value="Edit" class="btn btn-warning" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn btn-success" />
+                </div>
+            }
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

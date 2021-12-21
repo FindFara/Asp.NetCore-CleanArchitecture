@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Programer.Core.ViewModels.Products.ProductIndexVm>
+
+@{
+    ViewData["Title"] = "Product";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> @ViewData["Title"]</title>
+</head>
+<body>
+
+
+    <div class="card mb-4">
+        <div class="card-header">
+
+            <a asp-action="Create" type="button" class="btn btn-success">Add Book</a>
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                       
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GroupName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreateDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastModifyDate)
+                        </th>
+                      
+
+                    </tr>
+                </thead>
+                <thead>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <th>
+                            @item.Id
+                        </th>
+                        <th>
+                            @item.Name
+                        </th>
+                       
+                        <th>
+                            @item.Price
+                        </th>
+                        <th>
+                            @item.GroupName
+                        </th>
+                        <th>
+                            @item.CreateDate.toshamsi()
+                        </th>
+                        <th>
+                            @if (item.LastModifyDate.HasValue)
+                            {
+                                @item.LastModifyDate.Value.toshamsi()
+                            }
+                        </th>
+
+                        <th>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </th>
+                    </tr>
+                    }
+                </thead>
+
+
+
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

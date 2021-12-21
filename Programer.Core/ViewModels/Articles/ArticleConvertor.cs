@@ -21,10 +21,10 @@ namespace Programer.Core.ViewModels.Articles
                 Id = Article.Id,
                 GroupId = Article.ArticleGroupId,
                 Name = Article.Name,
-                writer = Article.Writer,
+                Writer = Article.Writer,
                 ShortDescription = Article.ShortDescription,
                 Description = Article.Description,
-              
+                CreateDate=Article.CreateDate
             };
         }
 
@@ -44,12 +44,11 @@ namespace Programer.Core.ViewModels.Articles
             return new ArticleIndexVm
             {
                 Id = Article.Id,
+                Name = Article.Name,
+                Writer = Article.Writer,
                 CreateDate = Article.CreateDate,
                 LastModifyDate = Article.LastModifyDate,
-                GroupName = Article.ArticleGroup?.ArticleTitle,
-                Name = Article.Name,
-                Writer = Article.Writer
-                
+                ArticleGroup = Article.ArticleGroup?.ArticleTitle,
             };
         }
         public static IEnumerable<ArticleIndexVm> ToIndexViewModel(this IEnumerable<Article> Articles)

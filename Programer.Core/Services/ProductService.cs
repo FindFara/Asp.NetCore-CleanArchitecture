@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Programer.Core.Interface;
 using Programer.Core.ViewModels.ProductGroups;
-using Programer.Core.ViewModels.Prouducts;
+using Programer.Core.ViewModels.Products;
 using Programer.DataEF.ProgramersContext;
 using Programer.Domain.Entities.Products;
 using System;

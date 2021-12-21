@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Programer.Core.ViewModels.Articles
 {
-    public class ArticleCreateOrEditVm : IAdminIndexViewModel<int>
+    public class ArticleCreateOrEditVm : IAdminCreateOrEditViewModel<int>
     {
         public int Id { get; set; }
         [Display(Name = "Group name ")]
@@ -20,7 +20,7 @@ namespace Programer.Core.ViewModels.Articles
 
         [Display(Name = "writer")]
         //[Required(ErrorMessage = " Enter the {0}")]
-        public string writer { get; set; }
+        public string Writer { get; set; }
 
         [Display(Name = "ShortDescription")]
         public string ShortDescription { get; set; }
@@ -28,6 +28,8 @@ namespace Programer.Core.ViewModels.Articles
         [Display(Name = "Description")]
         public string Description { get; set; }
 
+        [Display(Name = "Create Date")]
+        public DateTime CreateDate { get; set; }
 
     }
 }

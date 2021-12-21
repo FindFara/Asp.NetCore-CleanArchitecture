@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Programer.Core.ViewModels.ProductGroups.ProductGroupIndexVm>
+
+@{
+    ViewData["Title"] = "Productgroup";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> @ViewData["Title"]</title>
+</head>
+<body>
+
+
+    <div class="card mb-4">
+        <div class="card-header">
+
+            <a asp-action="Create" type="button" class="btn btn-success">Add Group</a>
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreateDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastModifyDate)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <thead>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <th>
+                            @item.Id
+                        </th>
+                        <th>
+                            @item.Title
+                        </th>
+                        <th>
+                            @item.CreateDate.toshamsi()
+                        </th>
+                        <th>
+                            @if (item.LastModifyDate.HasValue)
+                            {
+                                @item.LastModifyDate.Value.toshamsi()
+                            }
+                        </th>
+                        <th>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </th>
+                    </tr>
+                    }
+                </thead>
+
+
+
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

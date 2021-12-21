@@ -10,7 +10,7 @@ using Programer.DataEF.ProgramersContext;
 namespace Programer.DataEF.Migrations
 {
     [DbContext(typeof(ProgramerContext))]
-    [Migration("20211220084211_Database")]
+    [Migration("20211221080655_Database")]
     partial class Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

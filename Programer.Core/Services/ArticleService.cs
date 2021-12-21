@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Programer.Core.Interface;
 using Programer.Core.ViewModels.Articles;
-using Programer.Core.ViewModels.Prouducts;
+using Programer.Core.ViewModels.Products;
 using Programer.DataEF.ProgramersContext;
 using Programer.Domain.Entities.Articles;
 using System;
@@ -18,7 +18,7 @@ namespace Programer.Core.Services
 
     }
 
-    public class ArticleService 
+    public class ArticleService : IArticleService
     {
         private readonly ProgramerContext _context;
 
@@ -36,7 +36,7 @@ namespace Programer.Core.Services
                     Id = vm.Id,
                     ArticleGroupId = vm.GroupId,
                     Name = vm.Name,
-                    Writer = vm.writer,
+                    Writer = vm.Writer,
                     Description = vm.Description,
                     ShortDescription = vm.ShortDescription,
                     CreateDate = DateTime.Now,
@@ -75,7 +75,7 @@ namespace Programer.Core.Services
             {
                 var Article = await _context.Articles.FindAsync(vm.Id);
                 Article.Name = vm.Name;
-                Article.Writer = vm.writer;
+                Article.Writer = vm.Writer;
                 Article.ShortDescription = vm.ShortDescription;
                 Article.Description = vm.Description;
                 Article.ArticleGroupId = vm.GroupId;

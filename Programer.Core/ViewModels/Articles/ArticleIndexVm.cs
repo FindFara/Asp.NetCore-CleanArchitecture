@@ -13,7 +13,7 @@ namespace Programer.Core.ViewModels.Articles
         public int Id { get; set; }
 
         [Display(Name = "Group name ")]
-        public string GroupName { get; set; }
+        public string ArticleGroup { get; set; }
 
         [Display(Name = "Article name ")]
         public string Name { get; set; }

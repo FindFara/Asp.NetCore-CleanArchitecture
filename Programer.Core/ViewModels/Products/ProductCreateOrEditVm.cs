@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programer.Core.ViewModels.Prouducts
+namespace Programer.Core.ViewModels.Products
 {
-    public class ProductCreateOrEditVm : IAdminIndexViewModel<int>
+    public class ProductCreateOrEditVm : IAdminCreateOrEditViewModel<int>
     {
         public int Id { get; set; }
         [Display(Name = "Group name ")]
@@ -31,5 +31,7 @@ namespace Programer.Core.ViewModels.Prouducts
 
         [Display(Name = "Description")]
         public string Description { get; set; }
+        [Display(Name = "Create Date")]
+        public DateTime CreateDate { get; set; }
     }
 }
