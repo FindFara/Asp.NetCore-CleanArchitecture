@@ -1,0 +1,64 @@
+﻿@model Tuple<ProductGroupIndexVm, IPagedList<ProductDetail>>
+@inject Programer.Core.Services.IProductService Product
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- products categories start -->
+<partial name="_ProductGroupsHead" />
+<!-- products categories end -->
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div class="fontpg">
+                    <ul id="portfolio-flters">
+                        @foreach (var item in  Model.Item2)
+                        {
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                <div class="portfolio-wrap">
+                                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>@item.Name</h4>
+                                        <p>@item.FinalPrice</p>
+                                        <div class="portfolio-links">
+                                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+         
+
+        @foreach (var item in Model.Item2)
+        {<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>@item.Name</h4>
+                        <p>@item.FinalPrice</p>
+                        <div class="portfolio-links">
+                            <a href="/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+    </div>
+
+
+</section><!-- End Portfolio Section -->

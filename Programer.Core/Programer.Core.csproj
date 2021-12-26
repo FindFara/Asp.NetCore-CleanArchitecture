@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="X.PagedList" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Programer.DataEF\Programer.DataEF.csproj" />
     <ProjectReference Include="..\Programer.Domain\Programer.Domain.csproj" />
   </ItemGroup>

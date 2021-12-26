@@ -8,7 +8,34 @@ using System.Threading.Tasks;
 namespace Programer.Core.ViewModels.Products
 {
     public static class ProductConvertor
-    {
+    { 
+        #region ToDetailViewModel
+
+        public static ProductDetail ToDetailViewModel(this Product product)
+        {
+            if (product == null) return null;
+            return new ProductDetail
+            {
+                Id = product.Id,
+                ProductGroupId = product.ProductGroupId,
+                Name = product.Name,
+                ShortDescription = product.ShortDescription,
+                Description = product.Description,
+                Price = product.Price,
+                Discount = product.Discount,
+                ProductGroupName=product.ProductGroup?.ProductGroupTitle
+                
+            };
+        }
+
+        public static IQueryable<ProductDetail> ToDetailViewModel(this IQueryable<Product> products)
+        {
+            return products.Select(c => c.ToDetailViewModel());
+        }
+
+        #endregion
+
+
         #region ToCreateOrEditViewModel
 
         public static ProductCreateOrEditVm ToCreateOrEditViewModel(this Product product)

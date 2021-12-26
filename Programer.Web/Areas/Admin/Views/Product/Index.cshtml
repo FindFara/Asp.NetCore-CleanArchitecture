@@ -16,7 +16,7 @@
     <div class="card mb-4">
         <div class="card-header">
 
-            <a asp-action="Create" type="button" class="btn btn-success">Add Book</a>
+            <a asp-action="Create" type="button" class="btn btn-success">Add Product</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -73,9 +73,13 @@
                         </th>
 
                         <th>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+                                <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Delete</a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-warning">Edit</a> 
+                                <a asp-action="Details" asp-route-id="@item.Id"type="button" class="btn btn-success">Details</a>
+ 
+                            </div>
                         </th>
                     </tr>
                     }

@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Programer.Web.Controler
 {
-    public class HomeController : Controller
+    
+    public class ProductGroupsController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult Product()
+        [Route("p/{id}/{title}")] 
+        public IActionResult Index(int id , string title)
         {
             return View();
         }

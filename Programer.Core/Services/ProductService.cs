@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Programer.Core.Interface;
+using Programer.Core.Statics;
 using Programer.Core.ViewModels.ProductGroups;
 using Programer.Core.ViewModels.Products;
 using Programer.DataEF.ProgramersContext;
@@ -9,12 +10,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace Programer.Core.Services
 {
     public interface IProductService : IGenericService<int, ProductIndexVm, ProductCreateOrEditVm>
     {
-
+        IPagedList<ProductDetail> GetProductByGroupId(int groupId, int page = 1);
     }
 
     public class ProductService: IProductService
@@ -108,6 +110,13 @@ namespace Programer.Core.Services
         public async Task<List<ProductIndexVm>> GetAllAsync()
         {
             return await _context.Products.ToIndexViewModel().ToListAsync();
+        }
+
+        public IPagedList<ProductDetail> GetProductByGroupId(int groupId, int page = 1)
+        {
+            return _context.Products
+                .Select(c => c.ToDetailViewModel())
+                .ToPagedList(page, Values.PageSize);
         }
     }
 }
