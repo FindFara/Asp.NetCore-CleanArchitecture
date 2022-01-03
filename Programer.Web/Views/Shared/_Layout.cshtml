@@ -83,12 +83,12 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <a asp-area="" asp-controller="Home" asp-action="Product" class="get-started-btn scrollto mx-2">Account</a>
-                    @*<a asp-area="" asp-controller="Account" asp-action="Logout" class="get-started-btn scrollto mx-2">Logout</a>*@
+                    <a asp-area="" asp-controller="Account" asp-action="Logout" class="get-started-btn scrollto mx-2">Logout</a>
                 }
                 else
                 {
                     <a asp-area="" asp-controller="Account" asp-action="Login" class="get-started-btn scrollto mx-2">Login</a>
-                    @*<a asp-area="" asp-controller="Account" asp-action="Register" class="get-started-btn scrollto mx-2">Sign-in</a>*@
+                    <a asp-area="" asp-controller="Account" asp-action="Register" class="get-started-btn scrollto mx-2">Sign-in</a>
                 }
             </div>
 
