@@ -59,8 +59,8 @@ namespace Programer.Core.Services
         {
             try
             {
-                var productGroup = await _context.ProductGroups.FindAsync(id);
-                _context.ProductGroups.Remove(productGroup);
+                var product = await _context.Products.FindAsync(id);
+                _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
                 return true;
             }
@@ -115,6 +115,7 @@ namespace Programer.Core.Services
         public IPagedList<ProductDetail> GetProductByGroupId(int groupId, int page = 1)
         {
             return _context.Products
+                .Where(c=> c.ProductGroupId==groupId)
                 .Select(c => c.ToDetailViewModel())
                 .ToPagedList(page, Values.PageSize);
         }

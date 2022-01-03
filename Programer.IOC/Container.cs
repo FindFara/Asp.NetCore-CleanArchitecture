@@ -20,6 +20,7 @@ namespace Programer.IOC
             {
                 option.UseSqlServer(configuration.GetConnectionString("ProgramerConnection"));
             });
+
             services.AddTransient<ISecurityService, SecurityService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IProductService, ProductService>();

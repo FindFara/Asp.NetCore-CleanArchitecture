@@ -2,30 +2,25 @@
 @{
     ViewData["Title"] = "Product";
 }
+<header>
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div justify-content-center">
+                    <div class="fontpg">
+                        <ul id="portfolio-flters">
 
-<section id="portfolio" class="portfolio">
-    <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-            <h2>@ViewData["Title"]</h2>
-            <p> @*TODO : Add Group name*@</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <div class="fontpg">
-                    <ul id="portfolio-flters">
-
-                        <li><a asp-controller="Home" asp-action="Product" class="nav-link active" aria-current="page">All</a></li>
-                        @foreach (var item in await ProductGroup.GetAllAsync())
-                        {
-                            <li>
+                            <li><a asp-controller="Home" asp-action="Product" class="nav-link active" aria-current="page">All</a></li>
+                            @foreach (var item in await ProductGroup.GetAllAsync())
+                            {
+                                <li>
                                     <a asp-controller="Product" asp-action="Index" asp-route-id="@item.Id" asp-route-title="@item.Title">@item.Title</a>
-                            </li>
-                        }
-                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</header>

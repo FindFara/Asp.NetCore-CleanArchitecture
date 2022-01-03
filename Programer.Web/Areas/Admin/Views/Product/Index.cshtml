@@ -25,10 +25,11 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Id)
                         </th>
+
                         <th>
                             @Html.DisplayNameFor(model => model.Name)
                         </th>
-                       
+
                         <th>
                             @Html.DisplayNameFor(model => model.Price)
                         </th>
@@ -41,7 +42,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.LastModifyDate)
                         </th>
-                      
+
 
                     </tr>
                 </thead>
@@ -55,7 +56,7 @@
                         <th>
                             @item.Name
                         </th>
-                       
+
                         <th>
                             @item.Price
                         </th>
@@ -76,9 +77,9 @@
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
 
                                 <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Delete</a>
-                                <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-warning">Edit</a> 
-                                <a asp-action="Details" asp-route-id="@item.Id"type="button" class="btn btn-success">Details</a>
- 
+                                <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-warning">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-success">Details</a>
+
                             </div>
                         </th>
                     </tr>
