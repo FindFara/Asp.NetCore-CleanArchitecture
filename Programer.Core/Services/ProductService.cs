@@ -114,6 +114,10 @@ namespace Programer.Core.Services
 
         public IPagedList<ProductDetail> GetProductByGroupId(int groupId, int page = 1)
         {
+            if (page <= 0)
+            {
+                page = 1;
+            }
             return _context.Products
                 .Where(c=> c.ProductGroupId==groupId)
                 .Select(c => c.ToDetailViewModel())

@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-    padding: 60px 0;
+    padding: 50px 0;
     overflow: hidden;
 }
 
@@ -648,7 +648,7 @@ section {
 .services .icon-box {
     text-align: center;
     border: 1px solid #ebebeb;
-    padding: 80px 20px;
+    padding: 15px 20px;
     transition: all ease-in-out 0.3s;
     background: #fff;
 }
@@ -762,7 +762,7 @@ section {
         text-transform: uppercase;
         color: #444444;
         margin-bottom: 5px;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.1s ease-in-out;
         border-radius: 3px;
     }
 
@@ -1153,7 +1153,7 @@ section {
                 width: 36px;
                 height: 36px;
                 background: rgba(255, 255, 255, 0.8);
-                transition: ease-in-out 0.3s;
+                transition: ease-in-out 0.0s;
                 color: #484848;
                 display: inline-flex;
                 justify-content: center;

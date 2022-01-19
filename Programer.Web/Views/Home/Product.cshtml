@@ -3,15 +3,18 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<link href="~/css/Pagination.css" rel="stylesheet" />
+<br />
 <!-- products categories -->
 <partial name="_ProductGroupsHead" />
 <!-- products categories -->
 <!-- Product Section -->
 <body>
     <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="row">
+
+
                 @foreach (var item in await Product.GetAllAsync())
                 {
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
@@ -19,7 +22,7 @@
                             <img src="/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4>@item.Name</h4>
-                                <p>@item.Price</p>
+                                <p>@item.Price.ToDollar()</p>
                                 <div class="portfolio-links">
                                     <a href="/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
@@ -28,47 +31,15 @@
                         </div>
                     </div>
                 }
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                        </ul>
+       
             </div>
         </div>
     </section>

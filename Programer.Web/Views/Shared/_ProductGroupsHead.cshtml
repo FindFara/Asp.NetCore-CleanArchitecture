@@ -14,7 +14,7 @@
                             @foreach (var item in await ProductGroup.GetAllAsync())
                             {
                                 <li>
-                                    <a asp-controller="Product" asp-action="Index" asp-route-id="@item.Id" asp-route-title="@item.Title">@item.Title</a>
+                                    <a asp-controller="ProductGroups" asp-action="Index" asp-route-id="@item.Id" asp-route-title="@item.Title">@item.Title</a>
                                 </li>
                             }
                         </ul>

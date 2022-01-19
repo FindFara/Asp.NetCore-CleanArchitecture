@@ -16,5 +16,13 @@ namespace Programer.Web.Controler
         {
             return View();
         }
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult programers()
+        {
+            return View();
+        }
     }
 }

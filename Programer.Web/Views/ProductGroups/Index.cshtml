@@ -1,9 +1,8 @@
-﻿@model Tuple<ProductGroupIndexVm, IPagedList<ProductDetail>>
-@inject Programer.Core.Services.IProductService Product
+﻿@model Tuple<ProductGroupCreateOrEditVm, IPagedList<ProductDetail>>
 @{
     ViewData["Title"] = "Index";
 }
-
+<link href="~/css/Pagination.css" rel="stylesheet" />
 <!-- products categories start -->
 <partial name="_ProductGroupsHead" />
 <!-- products categories end -->
@@ -18,12 +17,12 @@
                         {
                             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                                 <div class="portfolio-wrap">
-                                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                                    <img src="/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
                                     <div class="portfolio-info">
                                         <h4>@item.Name</h4>
-                                        <p>@item.FinalPrice</p>
+                                        <p>@item.FinalPrice.ToDollar()</p>
                                         <div class="portfolio-links">
-                                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                            <a href="/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
                                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                         </div>
                                     </div>
